@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'SimuladorFirewall',
+  title: 'FireLogic',
   description: 'Simula un firewall con reglas personalizadas y visualización en tiempo real.'
 };
 

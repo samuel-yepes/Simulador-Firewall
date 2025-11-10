@@ -9,7 +9,7 @@ export function Header() {
             <ShieldCheck className="h-5 w-5" />
           </div>
           <div>
-            <h1 className="text-xl font-semibold text-foreground tracking-tight">Simulador Firewall</h1>
+            <h1 className="text-xl font-semibold text-foreground tracking-tight">FireLogic</h1>
           </div>
         </div>
       </div>
