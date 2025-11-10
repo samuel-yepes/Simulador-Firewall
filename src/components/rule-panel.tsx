@@ -72,9 +72,9 @@ export function RulePanel({
           </AlertDescription>
         </Alert>
         <div className="space-y-2 pt-4">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm ">
             Usa el formato: <strong>ACCIÓN PROTOCOLO de IP_ORIGEN:PUERTO a IP_DESTINO:PUERTO</strong>. <br/>
-            Usa <strong>CUALQUIERA</strong> como comodín para IP o Puerto.
+            Usa cualquiera como comodín para IP o Puerto.
           </p>
           <Textarea
             value={newRule}
@@ -83,7 +83,7 @@ export function RulePanel({
             className="font-mono text-sm"
           />
            <div className="text-xs text-muted-foreground">
-            Sugerencias: {exampleRules.map((r, i) => <button key={i} onClick={() => addExampleRule(r)} className="underline hover:text-primary ml-2">{r.split(' ')[0]} {r.split(' ')[1]}</button>)}
+            <strong> Sugerencias:</strong> {exampleRules.map((r, i) => <button key={i} onClick={() => addExampleRule(r)} className="underline hover:text-green-500 ml-3">{r.split(' ')[0]} {r.split(' ')[1]}</button>)}
           </div>
         </div>
 
@@ -100,16 +100,18 @@ export function RulePanel({
               No hay reglas definidas. Añade una para empezar.
             </div>
           ) : (
-            <div className="p-2 space-y-2">
+            <div className="p-2 space-y-3">
               {rules.map(({ id, value }, index) => (
-                <div key={id} className="flex items-center gap-2 p-2 bg-secondary/80 rounded-md group">
+                <div key={id} className="flex items-center gap-3 p-3 bg-secondary/80 rounded-md group">
                   <span className='text-muted-foreground font-bold text-xs mr-2'>{index + 1}</span>
                   <span className="font-mono text-sm flex-grow truncate">{value}</span>
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-7 w-7 opacity-20 group-hover:opacity-100"
+                    className="h-8 w-8 text-destructive hover:bg-destructive/10"
                     onClick={() => onDeleteRule(id)}
+                    title="Borrar regla"
+                    aria-label={`Borrar regla ${index + 1}`}
                   >
                     <Trash2 className="h-4 w-4" />
                     <span className="sr-only">Borrar regla</span>

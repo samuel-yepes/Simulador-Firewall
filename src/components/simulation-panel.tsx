@@ -52,13 +52,13 @@ export function SimulationPanel({
       <CardHeader>
         <CardTitle>2. Inicia la Simulación</CardTitle>
         <CardDescription>
-          Visualiza el tráfico de red y ve tus reglas en acción. Los paquetes (mensajes) se generan aleatoriamente desde un 'Origen' y viajan hacia el 'Destino', pasando por tu firewall.
+          Visualiza el tráfico de red y ve tus reglas en acción. Los paquetes se generan aleatoriamente desde un Punto de origen y viajan hacia un Destino, pasando por tu firewall.
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col gap-4">
         <div className="flex flex-col sm:flex-row gap-2">
           {!isSimulating ? (
-            <Button onClick={onStart} className="bg-green-600 hover:bg-green-700">
+            <Button onClick={onStart} className="bg-green-500 hover:bg-green-600">
               <Play className="mr-2 h-4 w-4" /> Iniciar Simulación
             </Button>
           ) : (
@@ -66,7 +66,7 @@ export function SimulationPanel({
               <Pause className="mr-2 h-4 w-4" /> Pausar Simulación
             </Button>
           )}
-          <Button onClick={onReset} variant="outline">
+          <Button onClick={onReset} variant="secondary" className='hover:text-red-600'>
             <RotateCcw className="mr-2 h-4 w-4" /> Reiniciar
           </Button>
         </div>
